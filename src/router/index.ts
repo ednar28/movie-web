@@ -5,10 +5,16 @@ const router = createRouter({
   routes: [
     {
       path: '/',
-      name: 'home',
-      component: () => import('@/pages/home/page-home.vue')
-    }
-  ]
+      component: () => import('@/layouts/web/layout-web.vue'),
+      children: [
+        {
+          path: '/',
+          name: 'home',
+          component: () => import('@/pages/home/page-home.vue'),
+        },
+      ],
+    },
+  ],
 })
 
 export default router
