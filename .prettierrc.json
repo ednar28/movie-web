@@ -1,8 +1,11 @@
 {
   "$schema": "https://json.schemastore.org/prettierrc",
   "semi": false,
-  "tabWidth": 2,
   "singleQuote": true,
-  "printWidth": 100,
-  "trailingComma": "none"
+  "trailingComma": "all",
+  "vueIndentScriptAndStyle": true,
+  "htmlWhitespaceSensitivity": "ignore",
+  "bracketSpacing": true,
+  "tabWidth": 2,
+  "plugins": ["@trivago/prettier-plugin-sort-imports", "prettier-plugin-tailwindcss"]
 }
