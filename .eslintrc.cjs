@@ -8,10 +8,9 @@ module.exports = {
     'eslint:recommended',
     '@vue/eslint-config-typescript',
     '@vue/eslint-config-prettier/skip-formatting',
-    'plugin:tailwindcss/recommended'
   ],
   parserOptions: {
-    ecmaVersion: 'latest'
+    ecmaVersion: 'latest',
   },
   rules: {
     // https://eslint.vuejs.org/rules/component-name-in-template-casing.html
@@ -20,21 +19,17 @@ module.exports = {
       'error',
       'kebab-case',
       {
-        registeredComponentsOnly: false
-      }
+        registeredComponentsOnly: false,
+      },
     ],
     // https://eslint.vuejs.org/rules/html-self-closing.html
     // never use /> for html tag and vue component, leave void self closing to prettier.
     'vue/html-self-closing': [
       'error',
       {
-        html: {
-          normal: 'always',
-          component: 'always',
-          void: 'never'
-        }
-      }
+        html: { normal: 'never', void: 'always' },
+      },
     ],
-    'prefer-const': 'error'
-  }
+    'prefer-const': 'error',
+  },
 }
