@@ -31,5 +31,6 @@ module.exports = {
       },
     ],
     'prefer-const': 'error',
+    'no-unused-vars': 'warn',
   },
 }
