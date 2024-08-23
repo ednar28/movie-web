@@ -1,22 +1,32 @@
 <script setup lang="ts">
-  import AppImage from '@/components/app-image.vue'
+  import AppLargeMovieCard from '@/components/app-large-movie-card.vue'
+  import AppSwiper from '@/components/app-swiper.vue'
   import { fmt } from '@/functions'
   import { useMovieSchedule } from '@/models/movie'
+  import { SwiperSlide } from 'swiper/vue'
 
   const { movies, getData } = useMovieSchedule()
-  getData(fmt.date(new Date(), 'yyyy-MM-dd'))
+  getData({
+    date: fmt.date(new Date(), 'yyyy-MM-dd'),
+  })
 </script>
 
 <template>
   <section id="just-release" class="container space-y-3">
-    <div class="text-xl font-bold text-white">Just Release</div>
-    <div class="flex flex-wrap items-center justify-between gap-6">
-      <template v-for="movie in movies" :key="movie.id">
-        <app-image
-          :src="movie._embedded.show.image?.medium"
-          class="aspect-ratio-square w-64 rounded-xl"
-        />
-      </template>
+    <h2>Just Release</h2>
+    <div>
+      <app-swiper>
+        <template v-for="movie in movies" :key="movie.id">
+          <swiper-slide>
+            <app-large-movie-card
+              :title="movie._embedded.show.name"
+              :image_url="movie._embedded.show.image.medium"
+              :genres="movie._embedded.show.genres"
+              :rating="movie._embedded.show.rating.average"
+            />
+          </swiper-slide>
+        </template>
+      </app-swiper>
     </div>
   </section>
 </template>
