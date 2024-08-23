@@ -1,4 +1,5 @@
 <script setup lang="ts">
+  import FooterWeb from './footer-web.vue'
   import NavbarWeb from './navbar-web.vue'
 </script>
 
@@ -9,6 +10,8 @@
     <div class="content">
       <router-view />
     </div>
+
+    <footer-web />
   </div>
 </template>
 
