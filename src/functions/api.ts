@@ -4,17 +4,19 @@ import type { AxiosRequestConfig, AxiosResponse } from 'axios'
 import { parse } from 'content-disposition-header'
 import { useRoute, useRouter } from 'vue-router'
 
-// axios.defaults.withCredentials = true
-
-export const useApi = (url: string) => {
+export const useApi = (url: string, needCredential?: boolean) => {
   const config: AxiosRequestConfig = {
     baseURL: url,
     timeout: 300000, // 300s / 5m
     headers: {
       Accept: 'application/json',
       // 'Content-Type': 'application/json',
-      //   'X-Requested-With': 'XMLHttpRequest',
+      // 'X-Requested-With': 'XMLHttpRequest',
     },
+  }
+
+  if (needCredential) {
+    axios.defaults.withCredentials = true
   }
 
   const toast = useToastStore()
