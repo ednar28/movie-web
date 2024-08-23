@@ -19,7 +19,7 @@
     @apply pointer-events-none fixed inset-x-0 bottom-12 z-50 flex flex-col;
 
     .toast-items {
-      @apply mx-auto mb-2 max-w-xs rounded-full px-4 py-1 text-xs text-white;
+      @apply mx-auto mb-2 max-w-xs rounded-full px-4 py-1 text-xs;
       background: #000000aa;
       transition: all 0.8s ease;
     }
