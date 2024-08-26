@@ -10,7 +10,7 @@
 </script>
 
 <template>
-  <div class="relative w-full">
+  <div class="relative w-full overflow-hidden">
     <app-image
       :src="image_url"
       :alt="title"

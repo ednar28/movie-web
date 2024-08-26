@@ -17,6 +17,8 @@ export default {
     extend: {
       aspectRatio: {
         banner: '5 / 1.8',
+        promotion: '3 / 1',
+        'movie-medium': '4 / 2',
       },
       colors: {
         primary: {

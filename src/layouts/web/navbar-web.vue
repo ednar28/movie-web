@@ -1,12 +1,16 @@
 <script setup lang="ts">
   import AppImage from '@/components/app-image.vue'
+  import { useWindowScroll } from '@vueuse/core'
+
+  const { y } = useWindowScroll()
 </script>
 
 <template>
-  <nav class="container fixed inset-x-0 top-0 z-30">
-    <div
-      class="flex w-full items-center justify-between bg-black bg-opacity-40 py-4"
-    >
+  <nav
+    class="fixed inset-x-0 top-0 z-30 bg-black shadow-md"
+    :class="{ 'bg-opacity-30': y < 20 }"
+  >
+    <div class="container flex w-full items-center justify-between py-4">
       <di class="rounded-xl bg-primary-600 p-3 text-sm font-bold">Movie App</di>
 
       <div class="flex items-center space-x-8">

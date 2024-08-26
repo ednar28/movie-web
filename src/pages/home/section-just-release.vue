@@ -15,7 +15,7 @@
   <section id="just-release" class="container space-y-3">
     <h2>Just Release</h2>
     <div>
-      <app-swiper>
+      <app-swiper :slidesPerView="5">
         <template v-for="movie in movies" :key="movie.id">
           <swiper-slide>
             <app-large-movie-card
